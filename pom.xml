@@ -8,19 +8,28 @@
 		<version>3.0.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
+
 	<groupId>org.lilyhe</groupId>
 	<artifactId>meal-nanny-project</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>meal-nanny-project</name>
-	<description>Meal Nanny provides resources for those looking to start their own mini community pantry.</description>
+	<description>Root project. Meal Nanny provides resources for those looking to start their own mini community pantry
+		.</description>
 
+
+	<packaging>pom</packaging>
 
 	<modules>
 		<module>meal-nanny-library</module>
+		<module>meal-nanny-web</module>
 	</modules>
+
+
 	<properties>
 		<java.version>11</java.version>
 	</properties>
+
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
