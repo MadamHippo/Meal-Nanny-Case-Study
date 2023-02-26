@@ -81,6 +81,18 @@
 			<optional>true</optional>
 		</dependency>
 
+		<dependency>
+			<groupId>org.lilyhe</groupId>
+			<artifactId>meal-nanny-library</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<scope>runtime</scope>
+		</dependency>
 
 	</dependencies>
 
