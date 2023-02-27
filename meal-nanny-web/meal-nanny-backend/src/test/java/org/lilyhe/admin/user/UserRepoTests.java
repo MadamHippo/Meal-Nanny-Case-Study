@@ -8,6 +8,8 @@ import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabas
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.test.annotation.Rollback;
+
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 @DataJpaTest
@@ -32,5 +34,14 @@ public class UserRepoTests {
         User savedUser = repo.save(userLilyHe);
         // testing to see if user object is actually persisted...
         assertThat(savedUser.getId()).isGreaterThan(0);
+    }
+
+
+    // use this method to list all objects in database
+    @Test
+    public void testListAllUsers(){
+        Iterable<User> listUsers = repo.findAll();
+        // quick hand lambda, anonymous function to take each user object and print it out
+        listUsers.forEach(user -> System.out.println(user));
     }
 }

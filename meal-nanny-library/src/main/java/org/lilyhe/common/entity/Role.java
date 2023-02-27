@@ -22,6 +22,14 @@ public class Role {
 
     }
 
+    /* id constructor if I need to assign multiple roles later per user
+
+    public Role(Integer id){
+        this.id = id;
+    }
+    */
+
+
     public Role(String name) {
         this.name = name;
     }
@@ -54,4 +62,30 @@ public class Role {
     public void setBio(String bio) {
         this.bio = bio;
     }
+
+    @Override
+    public String toString() {
+        return "Role is ["+name+"]";
+    }
+
+
+    // best practice to override default equals, and in case I need to create more roles in the future
+    // checks if two objects of the same type (Class) are equal
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Role other = (Role) obj;
+        if (id == null) {
+            if (other.id != null)
+                return false;
+        } else if (!id.equals(other.id))
+            return false;
+        return true;
+    }
+
 }

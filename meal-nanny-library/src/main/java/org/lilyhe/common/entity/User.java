@@ -111,4 +111,13 @@ public class User {
     public void addRole(Role role){
         this.roles.add(role);
     }
+
+
+    // override default toString to return string concat
+    @Override
+    public String toString() {
+        return "User [id=" + id + ", email=" + email + ", firstName=" + firstName + ", lastName=" + lastName
+                + ", roles=" + roles + "]";
+    }
+
 }
