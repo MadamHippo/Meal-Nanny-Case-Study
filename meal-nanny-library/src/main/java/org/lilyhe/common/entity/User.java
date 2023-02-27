@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.Iterator;
 
 // indicate this java class with map to a table in the database
 @Entity
@@ -51,7 +52,6 @@ public class User {
     }
 
 
-
     public Integer getId() {
         return id;
     }
@@ -59,6 +59,7 @@ public class User {
     public void setId(Integer id) {
         this.id = id;
     }
+
 
     public String getEmail() {
         return email;

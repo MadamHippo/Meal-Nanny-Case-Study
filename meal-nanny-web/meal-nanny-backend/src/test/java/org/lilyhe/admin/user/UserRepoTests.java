@@ -5,6 +5,7 @@ import org.lilyhe.common.entity.Role;
 import org.lilyhe.common.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
+import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase.Replace;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.test.annotation.Rollback;
@@ -13,7 +14,7 @@ import org.springframework.test.annotation.Rollback;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @DataJpaTest
-@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
+@AutoConfigureTestDatabase(replace = Replace.NONE)
 // committing changes to db after each test...
 @Rollback(false)
 public class UserRepoTests {
@@ -44,4 +45,12 @@ public class UserRepoTests {
         // quick hand lambda, anonymous function to take each user object and print it out
         listUsers.forEach(user -> System.out.println(user));
     }
+
+    @Test
+    public void testGetUserById(){
+        User userOne = repo.findById(1).get();
+        System.out.println(userOne);
+        assertThat(userOne).isNotNull();
+    }
+
 }

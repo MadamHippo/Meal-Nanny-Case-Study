@@ -22,11 +22,12 @@ public class Role {
 
     }
 
-    /* id constructor if I need to assign multiple roles later per user
+    /*id constructor if I need to assign multiple roles later per user
 
     public Role(Integer id){
         this.id = id;
     }
+
     */
 
 
@@ -63,11 +64,6 @@ public class Role {
         this.bio = bio;
     }
 
-    @Override
-    public String toString() {
-        return "Role is ["+name+"]";
-    }
-
 
     // best practice to override default equals, and in case I need to create more roles in the future
     // checks if two objects of the same type (Class) are equal
@@ -87,5 +83,11 @@ public class Role {
             return false;
         return true;
     }
+
+    @Override
+    public String toString() {
+        return "Role = [" + name + "]";
+    }
+
 
 }
