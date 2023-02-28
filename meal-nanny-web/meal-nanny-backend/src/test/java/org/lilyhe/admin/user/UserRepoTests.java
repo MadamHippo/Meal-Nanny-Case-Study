@@ -27,6 +27,8 @@ public class UserRepoTests {
 
     @Test
     public void testCreateUser(){
+
+        // USER 1
         Role testAdmin = entityManager.find(Role.class, 1);
         User userLilyHe = new User("lilyhe1991@gmail.com", "password123", "Lily", "He");
         userLilyHe.addRole(testAdmin);
@@ -35,6 +37,16 @@ public class UserRepoTests {
         User savedUser = repo.save(userLilyHe);
         // testing to see if user object is actually persisted...
         assertThat(savedUser.getId()).isGreaterThan(0);
+
+
+        // USER 2
+        Role testAssistant = entityManager.find(Role.class, 2);
+        User userJaredP = new User("jared10416@gmail.com", "password123", "Jared", "P");
+        userJaredP.addRole(testAssistant);
+
+        User savedUser2 = repo.save(userJaredP);
+        assertThat(savedUser2.getId()).isGreaterThan(0);
+
     }
 
 
@@ -51,6 +63,35 @@ public class UserRepoTests {
         User userOne = repo.findById(1).get();
         System.out.println(userOne);
         assertThat(userOne).isNotNull();
+    }
+
+
+    @Test
+    public void testUpdateUserDetails() {
+        User userOne = repo.findById(1).get();
+        userOne.setActive(true);
+        userOne.setEmail("lilyhe1992@gmail.com");
+
+        repo.save(userOne);
+    }
+
+    /* not working...need to troubleshoot.
+    @Test
+    public void testUpdateUserRoles(){
+        User savedUser = repo.findById(4).get();
+        Role roleAdmin =  new Role(1);
+        Role roleAssistant = new Role(2);
+        savedUser.addRole(roleAssistant);
+        savedUser.getRoles().remove(roleAdmin);
+
+        repo.save(savedUser);
+    }
+     */
+
+    @Test
+    public void testDeleteUser() {
+        Integer userId = 1;
+        repo.deleteById(userId);
     }
 
 }
