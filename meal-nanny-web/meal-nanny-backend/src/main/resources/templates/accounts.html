@@ -70,6 +70,10 @@
         <a th:href="@{/accounts/new}">Create New User</a>
     </div>
 
+    <div th:if="${message != null}" class="alert alert-success">
+        [[${message}]]
+    </div>
+
     <div>
         <table class = "table table-bordered table-striped table-hover table-responsive-xL">
             <thead class = "thead-light">
