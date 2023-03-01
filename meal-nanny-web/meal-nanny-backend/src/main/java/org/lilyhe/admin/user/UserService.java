@@ -3,10 +3,12 @@ package org.lilyhe.admin.user;
 import org.lilyhe.common.entity.Role;
 import org.lilyhe.common.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 // UserService = business class
 // using this bean to give biz logic for application
@@ -41,5 +43,15 @@ public class UserService {
     private void encodePassword(User user){
         String encodedPassword = passwordEncoder.encode(user.getPassword());
         user.setPassword(encodedPassword);
+    }
+
+
+    public User get(Integer id) throws UserNotFoundException {
+        try {
+            // Spring data JPA has findById method
+            return userRepo.findById(id).get();
+        } catch (NoSuchElementException ex) {
+            throw new UserNotFoundException("Couldn't find any user with ID: " + id);
+        }
     }
 }

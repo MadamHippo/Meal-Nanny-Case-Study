@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -37,6 +38,7 @@ public class UserController {
 
         model.addAttribute("user", user);
         model.addAttribute("listRoles", listRoles);
+        model.addAttribute("pageTitle", "Create New Account");
 
         return "account-reg";
     }
@@ -48,6 +50,24 @@ public class UserController {
         service.save(user);
         redirectAttributes.addFlashAttribute("message", "Account saved successfully.");
         return "redirect:/accounts";
+    }
+
+    @GetMapping("/accounts/edit/{id}")
+    public String editUser(@PathVariable(name="id") Integer id, Model model, RedirectAttributes redirectAttributes){
+
+        try {
+            User user = service.get(id);
+            List<Role> listRoles = service.listRoles();
+
+            model.addAttribute("listRoles", listRoles);
+            model.addAttribute("user", user);
+            model.addAttribute("pageTitle", "Editing Account ID: " + id);
+
+            return "account-reg";
+        } catch (UserNotFoundException ex) {
+            redirectAttributes.addFlashAttribute("message", ex.getMessage());
+            return "redirect:/accounts";
+        }
     }
 
 

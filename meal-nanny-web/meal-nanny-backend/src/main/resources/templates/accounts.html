@@ -109,7 +109,8 @@
                         [[${account.active}]]
                     </td>
                     <td>
-                        Edit &nbsp; Delete
+                        <a th:href="@{'/accounts/edit/' + ${account.id}}" title = "Edit User">Edit</a>
+                        <a>Delete</a>
                     </td>
                 </tr>
             </tbody>
