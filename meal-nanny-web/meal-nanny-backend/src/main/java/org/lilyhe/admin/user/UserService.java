@@ -3,6 +3,7 @@ package org.lilyhe.admin.user;
 import org.lilyhe.common.entity.Role;
 import org.lilyhe.common.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -19,6 +20,10 @@ public class UserService {
     @Autowired
     private RoleRepo roleRepo;
 
+    @Autowired
+    private BCryptPasswordEncoder passwordEncoder;
+
+
     public List<User> listAll(){
         // returns all user objects from the repo and put it in a list
         return (List<User>) userRepo.findAll();
@@ -29,6 +34,12 @@ public class UserService {
     }
 
     public void save(User user) {
+        encodePassword(user);
         userRepo.save(user);
+    }
+
+    private void encodePassword(User user){
+        String encodedPassword = passwordEncoder.encode(user.getPassword());
+        user.setPassword(encodedPassword);
     }
 }
