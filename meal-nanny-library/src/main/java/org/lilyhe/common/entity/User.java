@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 
 import java.util.HashSet;
 import java.util.Set;
-import java.util.Iterator;
 
 // indicate this java class with map to a table in the database
 @Entity
@@ -15,7 +14,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(length = 80, nullable = false, unique = true)
+    @Column(length = 128, nullable = false, unique = true)
     private String email;
 
     @Column(length = 64, nullable = false)

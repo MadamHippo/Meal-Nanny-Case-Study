@@ -26,7 +26,7 @@ public class RoleRepoTests {
 
     @Test
     public void testCreateFirstRole(){
-        Role testAdmin = new Role("Admin", "Advocate for food accessibility & nutrition for all.");
+        Role testAdmin = new Role("Admin", "Granted all privilege levels.");
         Role savedAdmin = repo.save(testAdmin);
         // making sure the Row object is actually in the database using assertThat API
         assertThat(savedAdmin.getId()).isGreaterThan(0);
@@ -35,7 +35,7 @@ public class RoleRepoTests {
 
     @Test
     public void testCreateAssistantRoles(){
-        Role roleAssistant = new Role("Assistant", "Helping out at the store, I ship, I sell, and I clean up well.");
+        Role roleAssistant = new Role("Assistant", "Helping out at the store: I post, I sell, and I clean up well.");
         // using list in case I want more administrative roles later
         repo.saveAll(List.of(roleAssistant));
     }
