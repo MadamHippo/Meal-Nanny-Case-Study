@@ -147,6 +147,8 @@
         <p> Copyright &copy; 2023 Meal Nanny. All rights reserved.</p>
     </div>
 </div>
+<!-- jQuery .post() method for REST webservice -->
+
 <script type="text/javascript">
 	$(document).ready(function() {
 		$("#buttonCancel").on("click", function() {
@@ -157,7 +159,7 @@
     function checkEmailUnique(form) {
         url = "[[@{/accounts/check_email}]]";
         userEmail = $("#email").val();
-        userId = $("#id)
+        userId = $("#id").val();
     	csrfValue = $("input[name='_csrf']").val();
     	params = {id: userId, email: userEmail, _csrf: csrfValue};
 
@@ -170,7 +172,6 @@
 		});
 		return false;
     }
-
 </script>
 </body>
 

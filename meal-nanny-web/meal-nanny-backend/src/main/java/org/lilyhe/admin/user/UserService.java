@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.NoSuchElementException;
 
-// UserService = business class
+// UserService = business logic
 // using this bean to give biz logic for application
 @Service
 public class UserService {
@@ -64,7 +64,6 @@ public class UserService {
     }
 
 
-
     public User get(Integer id) throws UserNotFoundException {
         try {
             // Spring data JPA has findById method
@@ -72,5 +71,16 @@ public class UserService {
         } catch (NoSuchElementException ex) {
             throw new UserNotFoundException("Couldn't find any user with ID: " + id);
         }
+    }
+
+
+    // new method: delete functionality
+    public void delete(Integer id) throws UserNotFoundException {
+        Long countById = userRepo.countById(id);
+        if (countById == null || countById < 1) {
+            throw new UserNotFoundException("Couldn't find any user with ID: " + id);
+        }
+
+        userRepo.deleteById(id);
     }
 }

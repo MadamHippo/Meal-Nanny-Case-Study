@@ -5,6 +5,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+// basic RESTful webservice implementation using...
 @RestController
 public class UserHTTPController {
     @Autowired

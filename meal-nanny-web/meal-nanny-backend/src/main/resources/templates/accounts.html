@@ -110,12 +110,15 @@
                     </td>
                     <td>
                         <a th:href="@{'/accounts/edit/' + ${account.id}}" title = "Edit User">Edit</a>
-                        <a>Delete</a>
+                        &nbsp;
+                        &nbsp;
+                        <a th:href="@{'/accounts/delete/' + ${account.id}}" title = "Delete User">Delete</a>
                     </td>
                 </tr>
             </tbody>
         </table>
     </div>
+
 
     <div class="text-center">
         <p> Copyright &copy; 2023 Meal Nanny. All rights reserved.</p>

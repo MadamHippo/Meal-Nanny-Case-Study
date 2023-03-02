@@ -95,6 +95,7 @@ public class UserRepoTests {
     }
 
 
+    // testing duplicate email
     @Test
     public void testGetUserByEmail() {
         String email = "foo@gmail.com";
@@ -102,4 +103,14 @@ public class UserRepoTests {
 
         assertThat(user).isNotNull();
     }
+
+    // testing delete function
+    @Test
+    public void testCountById() {
+        Integer id = 4;
+        Long countTestResult = repo.countById(id);
+
+        assertThat(countTestResult).isNotNull().isGreaterThan(0);
+    }
+
 }

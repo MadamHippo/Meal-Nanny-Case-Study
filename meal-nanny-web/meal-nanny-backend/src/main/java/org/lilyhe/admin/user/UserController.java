@@ -12,6 +12,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
 
+// Controller layer for request handling
+
 @Controller
 public class UserController {
 
@@ -26,7 +28,7 @@ public class UserController {
         return "accounts";
     }
 
-
+    // new account creation
     @GetMapping("/accounts/new")
     public String newUser(Model model){
         List<Role> listRoles = service.listRoles();
@@ -52,7 +54,8 @@ public class UserController {
         return "redirect:/accounts";
     }
 
-    // edit function
+    // edit and update function
+    // read only method
     @GetMapping("/accounts/edit/{id}")
     public String editUser(@PathVariable(name="id") Integer id, Model model, RedirectAttributes redirectAttributes){
 
@@ -69,6 +72,22 @@ public class UserController {
             redirectAttributes.addFlashAttribute("message", ex.getMessage());
             return "redirect:/accounts";
         }
+    }
+
+    // delete function
+    @GetMapping("/accounts/delete/{id}")
+    public String deleteUser(@PathVariable(name="id") Integer id, Model model, RedirectAttributes redirectAttributes) {
+
+        try {
+            service.delete(id);
+            redirectAttributes.addFlashAttribute("message", "User account " + id + " has been successfully removed!");
+
+        } catch (UserNotFoundException ex) {
+            redirectAttributes.addFlashAttribute("message", ex.getMessage());
+            return "redirect:/accounts";
+        }
+        return "redirect:/accounts";
+
     }
 
 
