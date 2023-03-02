@@ -3,7 +3,7 @@ package org.lilyhe.admin.user;
 import org.lilyhe.common.entity.Role;
 import org.lilyhe.common.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
+// import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -36,14 +36,33 @@ public class UserService {
     }
 
     public void save(User user) {
-        encodePassword(user);
+        boolean isUpdatingUser = (user.getId() != null);
+        if (isUpdatingUser) {
+            User existingUser = userRepo.findById(user.getId()).get();
+
+            if (user.getPassword().isEmpty()){
+                user.setPassword(existingUser.getPassword());
+            } else {
+                encodePassword(user);
+            }
+        } else {
+            encodePassword(user);
+        }
         userRepo.save(user);
+    }
+
+    public boolean isEmailUnique(String email) {
+        User userByEmail = userRepo.getUserByEmail(email);
+
+
+        return userByEmail == null;
     }
 
     private void encodePassword(User user){
         String encodedPassword = passwordEncoder.encode(user.getPassword());
         user.setPassword(encodedPassword);
     }
+
 
 
     public User get(Integer id) throws UserNotFoundException {

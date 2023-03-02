@@ -52,6 +52,7 @@ public class UserController {
         return "redirect:/accounts";
     }
 
+    // edit function
     @GetMapping("/accounts/edit/{id}")
     public String editUser(@PathVariable(name="id") Integer id, Model model, RedirectAttributes redirectAttributes){
 

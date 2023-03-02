@@ -69,7 +69,8 @@
         <h2>Manage Accounts | [[${pageTitle}]] </h2>
     </div>
 
-    <form th:action="@{/accounts/save}" method="post" style="max-width: 700px; margin: 0 auto" th:object="${user}">
+    <form th:action="@{/accounts/save}" method="post" style="max-width: 700px; margin: 0 auto" th:object="${user}"
+          onsubmit="return checkEmailUnique(this)">
     <div class = "border border-secondary rounded p-5">
 
         <div class="form-group row">
@@ -99,7 +100,14 @@
         <div class="form-group row">
             <label class="col-sm-4 col-form-label">Password</label>
             <div class = "col-sm-8">
-                <input type="password" class="form-control" th:field="*{password}" required minlength="8"
+                <input th:if="${user.id==null}" input type="password" class="form-control" th:field="*{password}"
+                       required
+                       minlength="8"
+                       maxlength="25" />
+
+                <!-- editing mode so password is not required -->
+                <input th:if="${user.id!=null}" input type="password" class="form-control" th:field="*{password}"
+                       minlength="8"
                        maxlength="25" />
             </div>
         </div>
@@ -144,6 +152,27 @@
 			window.location = "[[@{/accounts}]]";
         });
     });
+
+    function checkEmailUnique(form) {
+        url = "[[@{/accounts/check_email}]]";
+        userEmail = $("#email").val();
+    	csrfValue = $("input[name='_csrf']").val();
+    	params = {email: userEmail, _csrf: csrfValue};
+
+     	$.post(url, params, function(response) {
+    		if (response == "OK") {
+				form.submit();
+			} else if (response == "Duplicated") {
+				alert("This email is registered to an account already.");
+			}
+		});
+		return false;
+    }
+
 </script>
 </body>
+
+
+
+
 </html>
