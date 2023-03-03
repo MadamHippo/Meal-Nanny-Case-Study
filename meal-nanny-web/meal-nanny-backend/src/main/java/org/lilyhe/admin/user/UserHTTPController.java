@@ -12,7 +12,7 @@ public class UserHTTPController {
     private UserService service;
 
     @PostMapping("/accounts/check_email")
-    public String checkAccountDupe(@Param("email") String email) {
-        return service.isEmailUnique(email) ? "OK" : "Duplicated";
+    public String checkAccountDupe(@Param("id") Integer id, @Param("email") String email) {
+        return service.isEmailUnique(id, email) ? "OK" : "Duplicated";
     }
 }

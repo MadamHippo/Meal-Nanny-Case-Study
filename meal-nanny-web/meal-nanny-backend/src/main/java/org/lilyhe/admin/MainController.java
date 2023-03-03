@@ -12,7 +12,11 @@ public class MainController {
         return "index";
     }
 
-
+    // Login/logout
+    @GetMapping("/login")
+    public String viewLogin(){
+        return "login";
+    }
 
 
 }

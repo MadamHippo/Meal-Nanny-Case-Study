@@ -5,6 +5,7 @@ import org.lilyhe.common.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 // import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import org.springframework.transaction.annotation.Transactional;
@@ -27,7 +28,7 @@ public class UserService {
     private RoleRepo roleRepo;
 
     @Autowired
-    private BCryptPasswordEncoder passwordEncoder;
+    private PasswordEncoder passwordEncoder;
 
 
     private static final Logger logger = LoggerFactory.getLogger(UserService.class);
@@ -62,11 +63,13 @@ public class UserService {
         logger.info("User saved: ", user);
     }
 
-    public boolean isEmailUnique(String email) {
+    public boolean isEmailUnique(Integer id, String email) {
         User userByEmail = userRepo.getUserByEmail(email);
 
-
-        return userByEmail == null;
+        if (userByEmail == null) {
+            return true;
+        }
+        return userByEmail.getId().equals(id);
     }
 
     private void encodePassword(User user){

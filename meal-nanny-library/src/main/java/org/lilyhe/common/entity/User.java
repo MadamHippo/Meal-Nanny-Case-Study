@@ -32,8 +32,8 @@ public class User {
 
     private boolean active;
 
-
-    @ManyToMany
+    // sorry Igor but it doesn't run with lazy for some reason
+    @ManyToMany(fetch = FetchType.EAGER)
     // unidirectional from user to role
     @JoinTable(
             name = "users_roles",
