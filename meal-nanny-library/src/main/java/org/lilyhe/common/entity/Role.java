@@ -2,6 +2,9 @@ package org.lilyhe.common.entity;
 
 import jakarta.persistence.*;
 
+/**
+ * @author Lily H.
+ */
 @Entity
 @Table(name = "roles")
 public class Role {

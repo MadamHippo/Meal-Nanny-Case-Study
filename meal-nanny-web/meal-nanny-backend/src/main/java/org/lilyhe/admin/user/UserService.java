@@ -7,6 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import org.springframework.transaction.annotation.Transactional;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.List;
 import java.util.NoSuchElementException;
 
@@ -26,6 +30,9 @@ public class UserService {
     private BCryptPasswordEncoder passwordEncoder;
 
 
+    private static final Logger logger = LoggerFactory.getLogger(UserService.class);
+
+
     public List<User> listAll(){
         // returns all user objects from the repo and put it in a list
         return (List<User>) userRepo.findAll();
@@ -35,7 +42,10 @@ public class UserService {
         return (List<Role>) roleRepo.findAll();
     }
 
+    @Transactional
     public void save(User user) {
+        // info used to log messages. (other options include debug, warn, error etc.)
+        logger.info("Saving user: ", user);
         boolean isUpdatingUser = (user.getId() != null);
         if (isUpdatingUser) {
             User existingUser = userRepo.findById(user.getId()).get();
@@ -49,6 +59,7 @@ public class UserService {
             encodePassword(user);
         }
         userRepo.save(user);
+        logger.info("User saved: ", user);
     }
 
     public boolean isEmailUnique(String email) {

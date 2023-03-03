@@ -5,6 +5,9 @@ import jakarta.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * @author Lily H.
+ */
 // indicate this java class with map to a table in the database
 @Entity
 @Table(name = "users")
