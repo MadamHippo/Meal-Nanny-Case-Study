@@ -1,0 +1,113 @@
+/* Import the Roboto font from Google Fonts */
+@import url('https://fonts.googleapis.com/css?family=Roboto:700');
+
+
+/* Set general styles for the body */
+body {
+  margin:0px;
+  font-family:'Roboto';
+  text-align:center;
+  background-image: url('images/maddi-bazzocco-unsplash.jpg');
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.5); /* white overlay with 50% opacity */
+  z-index: -1; /* place the layer behind all other elements */
+}
+
+/* Set styles for the main container */
+#container {
+  color:#000;
+  text-transform: uppercase;
+  font-size:75px;
+  font-weight:bold;
+  padding-top:200px;
+  position:fixed;
+  width:50%;
+  bottom:45%;
+  display:block;
+}
+
+/* Set styles for the flip animation */
+#flip {
+  height: 130px;
+  overflow:hidden;
+}
+
+/* Set styles for the flip animation's text */
+#flip > div > div {
+  color:#fff;
+  padding: 2px 10px 2px 10px;
+  height:90px;
+  margin-bottom:90px;
+  display:inline-block;
+}
+
+/* Set the background color for each flip animation div */
+#flip div div {
+  background: #42c58a;
+}
+
+#flip div:nth-child(2) div {
+  background: #4ec7f3;
+}
+
+#flip div:nth-child(3) div {
+  background: #DD1F84;
+}
+
+#flip div:nth-child(4) div {
+  background: #DC143C;
+}
+
+#flip div:last-child div {
+  background: #C71585;
+}
+
+#flip div:nth-last-child(1) div {
+  background: #8B008B;
+}
+
+/* Set the animation for the flip animation */
+@keyframes show {
+  0% {margin-top: -540px;} /* double the original value of -270px */
+  10% {margin-top: -540px;}
+  15% {margin-top: -360px;} /* double the original value of -180px */
+  25% {margin-top: -360px;}
+  30% {margin-top: -180px;} /* double the original value of -90px */
+  40% {margin-top: -180px;}
+  45% {margin-top: 0px;}
+  55% {margin-top: 0px;}
+  60% {margin-top: -180px;}
+  70% {margin-top: -180px;}
+  75% {margin-top: -360px;} /* double the original value of -180px */
+  85% {margin-top: -360px;}
+  90% {margin-top: -540px;} /* double the original value of -270px */
+  100% {margin-top: -540px;}
+}
+
+/* Apply the animation to the first flip animation div */
+#flip div:first-child {
+  animation: show 10s linear infinite;
+}
+
+/* Set styles for the bottom text */
+p {
+  position:fixed;
+  width:100%;
+  bottom:30px;
+  font-size:18px;
+  color:#000;
+  margin-top:200px;
+}

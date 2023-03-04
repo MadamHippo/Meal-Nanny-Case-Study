@@ -32,7 +32,7 @@ public class User {
 
     private boolean active;
 
-    // sorry Igor but it doesn't run with lazy for some reason
+    // sorry Igor but it doesn't run with lazy with manyToMany and won't direct login otherwise
     @ManyToMany(fetch = FetchType.EAGER)
     // unidirectional from user to role
     @JoinTable(

@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0">
     <title>Login: Meal Nanny Admin </title>
     <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 
@@ -14,12 +15,15 @@
 <div class="container-fluid text-center">
 
     <div>
-        <h1>Volunteer Login Page</h1>
-        <img th:src="@{/images/Meal-Nanny-logo-2.png}" />
-
+        <img th:src="@{/images/Meal-Nanny-logo-2.png}" width="300" height="auto"
+             style="padding-bottom: 10px; padding-top: 20px"/>
+        <h1>Members-Only Login: </h1>
         <form th:action="@{/login}" method="post" style="max-width: 350px; margin: 0 auto">
             <div th:if="${param.error}">
                 <p class="text-danger">[[${session.SPRING_SECURITY_LAST_EXCEPTION.message}]]</p>
+            </div>
+            <div th:if="${param.logout}">
+                <p class="text-warning">You have been logged out.</p>
             </div>
 
             <div class = "border border-secondary rounded p-3">
@@ -40,7 +44,7 @@
     </div>
 
     <div>
-        <p> Copyright &copy; 2023 Meal Nanny. All rights reserved.</p>
+        <p style="padding-top: 10px;"> Copyright &copy; 2023 Meal Nanny. All rights reserved.</p>
     </div>
 </div>
 </body>
