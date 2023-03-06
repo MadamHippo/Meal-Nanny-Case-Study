@@ -9,8 +9,11 @@
 <div class="container-fluid">
 
     <div th:replace="navbar :: navbar">
+    </div>
+
+    <div>
         <h2>Manage Accounts</h2>
-        <a th:href="@{/accounts/new}">Create New User</a>
+        <a th:href="@{/accounts/new}">New? Create an Account!</a>
     </div>
 
     <div th:if="${message != null}" class="alert alert-success">
