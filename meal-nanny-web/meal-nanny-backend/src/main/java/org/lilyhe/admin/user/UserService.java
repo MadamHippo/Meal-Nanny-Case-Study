@@ -15,7 +15,13 @@ import org.slf4j.LoggerFactory;
 import java.util.List;
 import java.util.NoSuchElementException;
 
-// UserService = business logic
+/**
+ * @author Lily H.
+ *
+ * UserService = business logic
+ */
+
+
 // using this bean to give biz logic for application
 @Service
 public class UserService {
@@ -31,17 +37,21 @@ public class UserService {
     private PasswordEncoder passwordEncoder;
 
 
+    // method of the LoggerFactory class from the org.slf4j package
+    // good to display different types of msg to debug
     private static final Logger logger = LoggerFactory.getLogger(UserService.class);
 
 
+    // gets stuff and returns user role objects from repo...and...
     public List<User> listAll(){
-        // returns all user objects from the repo and put it in a list
+        // ...returns all user objects from the repo and put it in a list
         return (List<User>) userRepo.findAll();
     }
 
     public List<Role> listRoles(){
         return (List<Role>) roleRepo.findAll();
     }
+
 
     @Transactional
     public void save(User user) {
@@ -60,6 +70,7 @@ public class UserService {
             encodePassword(user);
         }
         userRepo.save(user);
+        // logger method to log this msg:
         logger.info("User saved: ", user);
     }
 
@@ -72,16 +83,19 @@ public class UserService {
         return userByEmail.getId().equals(id);
     }
 
+    // encoding password using hashing algorithm to protect users, it cannot be reversed
     private void encodePassword(User user){
         String encodedPassword = passwordEncoder.encode(user.getPassword());
         user.setPassword(encodedPassword);
     }
 
 
+    // gets User object from database or throw error if user doesn't exist...
     public User get(Integer id) throws UserNotFoundException {
         try {
             // Spring data JPA has findById method
             return userRepo.findById(id).get();
+            // Note, the .get() chained is used to extract the User object from the Optional<User> returned by findById().
         } catch (NoSuchElementException ex) {
             throw new UserNotFoundException("Couldn't find any user with ID: " + id);
         }

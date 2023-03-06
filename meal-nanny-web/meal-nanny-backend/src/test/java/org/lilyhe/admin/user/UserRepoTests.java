@@ -13,7 +13,16 @@ import org.springframework.test.annotation.Rollback;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+
+/**
+ * @author Lily H.
+ *
+ * testing main CRUD of entity models
+ */
+
+// used to test JPA repo, sets up in-memory db that allows for integration testing with actual db
 @DataJpaTest
+// test database will not replace any existing database.
 @AutoConfigureTestDatabase(replace = Replace.NONE)
 // committing changes to db after each test...
 @Rollback(false)
@@ -23,6 +32,8 @@ public class UserRepoTests {
 
     // provided by SpringDataJPA for unit testing with Repo
     @Autowired
+    // injects a TestEntityManager instance into the test class
+    // to interact with in-memo db during test runs
     private TestEntityManager entityManager;
 
     @Test
@@ -36,12 +47,14 @@ public class UserRepoTests {
         // impl. by Spring data jpa at runtime and will return an object that can be asserted
         User savedUser = repo.save(userLilyHe);
         // testing to see if user object is actually persisted...
+
         assertThat(savedUser.getId()).isGreaterThan(0);
 
 
         // USER 2
         Role testAssistant = entityManager.find(Role.class, 2);
         User userJaredP = new User("jared10416@gmail.com", "password123", "Jared", "P");
+        // checks if the objects are actually persisted
         userJaredP.addRole(testAssistant);
 
         User savedUser2 = repo.save(userJaredP);

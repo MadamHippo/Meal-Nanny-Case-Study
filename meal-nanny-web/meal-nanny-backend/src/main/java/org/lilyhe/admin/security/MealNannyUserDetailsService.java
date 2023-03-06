@@ -1,7 +1,3 @@
-/**
- * @author Lily H.
- */
-
 package org.lilyhe.admin.security;
 import org.lilyhe.admin.user.UserRepo;
 import org.lilyhe.common.entity.User;
@@ -10,8 +6,13 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
-// this code is used to retrieve a user object from the db using a unique email address and then making & returning
-// userDetails object that contains info about the user from GrantedAuth.
+
+/**
+ * @author Lily H.
+ * this code is used to retrieve a user object from the db using a unique email address and then making & returning
+ * userDetails object that contains info about the user from GrantedAuth.
+ */
+
 
 // Impl. on spring security
 public class MealNannyUserDetailsService implements UserDetailsService {

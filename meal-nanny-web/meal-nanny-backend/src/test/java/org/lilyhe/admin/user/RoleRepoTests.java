@@ -12,6 +12,12 @@ import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+/**
+ * @author Lily H.
+ *
+ * testing creating role and getting it to db
+ */
+
 @DataJpaTest
 // using this annotation to override default spring JPA database to run test against a real db
 @AutoConfigureTestDatabase(replace = Replace.NONE)

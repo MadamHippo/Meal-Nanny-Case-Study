@@ -13,6 +13,15 @@
     <div th:replace="fragments :: mealnanny_animation('animation')">
     </div>
 
+    <br>
+    <h3>
+    <div>
+        Welcome Back <a style="color:black;"
+            sec:authentication="principal.fullname"></a>
+
+    </div>
+    </h3>
+    <br>
     <div>
         <p> Copyright &copy; 2023 Meal Nanny. All rights reserved.</p>
     </div>

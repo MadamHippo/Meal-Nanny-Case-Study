@@ -11,7 +11,12 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 
-// UserDetails is a Spring security interface to represent user details like username, password, roles etc.
+/**
+ * @author Lily H.
+ * UserDetails is a Spring security interface to represent user details like username, password, roles etc.
+ * I'm creating session management for login. A session is created and maintained until the user logs out.
+ * The user's identity and permissions are stored in the session while logged in.
+ */
 public class MealNannyUserDetails implements UserDetails {
 
     // variable for user represented in model

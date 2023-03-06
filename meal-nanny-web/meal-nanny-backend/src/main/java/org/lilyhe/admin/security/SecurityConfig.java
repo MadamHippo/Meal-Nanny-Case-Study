@@ -17,7 +17,14 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
+/**
+ * @author Lily H.
+ * specify authentication, access control policies, and authorization rules for web app
+ * critical part of Spring security responsible for setting up logins
+ */
+
 @Configuration
+//  overrides the default configuration provided by Spring Security
 @EnableWebSecurity
 public class SecurityConfig {
 

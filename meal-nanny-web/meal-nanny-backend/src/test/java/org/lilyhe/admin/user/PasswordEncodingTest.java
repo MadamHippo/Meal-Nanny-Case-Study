@@ -5,6 +5,13 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+
+/**
+ * @author Lily H.
+ *
+ * encoding test
+ */
+
 public class PasswordEncodingTest {
     @Test
     public void testEncodePassword(){
