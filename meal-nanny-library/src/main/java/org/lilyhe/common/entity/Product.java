@@ -19,7 +19,7 @@ public class Product {
     @Column(name = "description", length = 4000, nullable = false)
     private String description;
     @Column(name = "in_stock")
-    private boolean inStock;
+    private int inStock;
     private float cost;
 
 
@@ -59,11 +59,11 @@ public class Product {
         this.description = description;
     }
 
-    public boolean isInStock() {
+    public int getInStock() {
         return inStock;
     }
 
-    public void setInStock(boolean inStock) {
+    public void setInStock(int inStock) {
         this.inStock = inStock;
     }
 

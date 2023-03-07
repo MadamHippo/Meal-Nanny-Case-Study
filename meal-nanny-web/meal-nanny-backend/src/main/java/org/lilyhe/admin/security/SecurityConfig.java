@@ -89,7 +89,7 @@ public class SecurityConfig {
     public WebSecurityCustomizer webSecurityCustomizer() {
         return (web) -> web
                 .ignoring()
-                .requestMatchers("/images/**", "/js/**", "/webjars/**");
+                .requestMatchers("/images/**", "/js/**", "/webjars/**", "/*.css");
     }
 }
 

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: page_head('Create Product Page')">
+<body>
+<div class="container-fluid">
+    <div th:replace="navbar :: navbar"></div>
+
+
+    <div>
+        <h2>Manage Products | [[${pageTitle}]]</h2>
+    </div>
+
+    <form th:action="@{/stocklist/save}" method="post"
+          th:object="${product}">
+        <input type="hidden" th:field="*{id}" />
+
+        <div>
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" data-toggle="tab" href="#overview" role="tab">Overview</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#images" role="tab">Images</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#description" role="tab">Description</a>
+                </li>
+
+                <!--
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#inStock" role="tab">In Stock Qty</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#cost" role="tab">Cost</a>
+                </li>
+                -->
+            </ul>
+
+            <div class="tab-content">
+                <div class="tab-pane active p-3" id="overview" role="tabpanel">
+                    <div th:replace="product_overview :: content"></div>
+                </div>
+                <div class="tab-pane" id="images" role="tabpanel">Images</div>
+                <div class="tab-pane" id="description" role="tabpanel">Description</div>
+                <div class="tab-pane" id="inStock" role="tabpanel">In Stock Qty</div>
+                <div class="tab-pane" id="cost" role="tabpanel">Cost</div>
+            </div>
+        </div>
+        <div class="text-center">
+            <input type="submit" value="Save" />
+            <input type="button" value="Cancel" id="buttonCancel" />
+        </div>
+    </form>
+
+</div>
+</body>
+</html>

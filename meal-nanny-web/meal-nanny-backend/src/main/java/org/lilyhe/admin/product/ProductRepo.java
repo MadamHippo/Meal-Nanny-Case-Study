@@ -7,7 +7,11 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 
 /**
  * @author Lily H.
+ * Working with the db
  */
+
+// extending Paging&Sorting interface + CrudRepo both because Spring 3 updated Paging&Sorting and removed some
+// features that are now found in CRUD Repo.
 public interface ProductRepo extends PagingAndSortingRepository<Product, Integer>, CrudRepository<Product, Integer> {
 
 }
