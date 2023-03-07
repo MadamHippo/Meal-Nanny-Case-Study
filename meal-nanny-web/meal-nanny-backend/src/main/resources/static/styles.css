@@ -102,6 +102,18 @@ body::before {
   animation: show 10s linear infinite;
 }
 
+/* error */
+.error-body {
+	height: 50vh;
+	font-family: "Roboto", "sans-serif";
+	font-weight: bolder;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+
 /* Set styles for the bottom text */
 
 .footer {
@@ -120,3 +132,4 @@ body::before {
     display: none !important;
   }
 }
+

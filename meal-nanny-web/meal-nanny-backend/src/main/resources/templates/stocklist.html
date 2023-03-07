@@ -20,18 +20,16 @@
         <table class="table table-bordered table-striped table-hover table-responsive-xl">
             <thead class="thead-dark">
             <tr>
-                <th>ID</th>
                 <th>Main Image</th>
                 <th>Product Name</th>
                 <th>In-Stock</th>
                 <th>Cost</th>
                 <th>Details</th>
-                <th>Modify</th>
+                <th>Delete</th>
             </tr>
             </thead>
             <tbody>
             <tr th:each="product : ${listProducts}">
-                <td>[[${product.id}]]</td>
                 <td>
                     Image
                 </td>
@@ -39,17 +37,20 @@
                 <td>[[${product.inStock}]]</td>
                 <td>[[${product.cost}]]</td>
                 <td>
+                    [[${product.description}]]
+                    <!--
                     <a th:href="@{'/stocklist/detail/' + ${product.id}}"
                        title="View details of this product"
                     ></a>
+                    -->
                     <!--
                     <div
                             th:replace="fragments :: status(${product.inStock}, 'product', '/products/' + ${product.id})" />
                      -->
                 </td>
                 <td>
-                    <a th:href="@{'/stocklist/edit/' + ${product.id}}" title = "Edit Product">Edit</a>
-                    &nbsp
+                    <!-- <a th:href="@{'/stocklist/edit/' + ${product.id}}" title = "Edit Product">Edit</a>
+                    &nbsp-->
                     &nbsp;
                     <a th:href="@{'/stocklist/delete/' + ${product.id}}" title = "Delete Product">Delete</a>
                 </td>
@@ -58,5 +59,15 @@
         </table>
     </div>
 </div>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(".link-delete").on("click", function(e) {
+            e.preventDefault();
+            showDeleteConfirmModal($(this), 'stocklist');
+        });
+    });
+
+</script>
 </body>
 </html>

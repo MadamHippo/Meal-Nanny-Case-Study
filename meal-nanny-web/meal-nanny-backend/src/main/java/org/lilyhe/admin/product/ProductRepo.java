@@ -14,4 +14,7 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 // features that are now found in CRUD Repo.
 public interface ProductRepo extends PagingAndSortingRepository<Product, Integer>, CrudRepository<Product, Integer> {
 
+    // public Product findByName(String name);
+
+    public Long countById(Integer id);
 }
