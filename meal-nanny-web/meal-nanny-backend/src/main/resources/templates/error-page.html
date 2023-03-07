@@ -1,23 +1,24 @@
+<!-- Basic error page with header made with Thymeleaf reusable fragments.-->
+
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0">
-    <title>Whoopsy Daisy!</title>
-    <link rel="stylesheet" href="styles.css">
+<head th:replace="fragments :: page_head('Meal Nanny Error Page')">
 </head>
 
 <body>
 <div class="container-fluid">
     <div th:replace="navbar :: navbar">
     </div>
+
+
     <div class="m-3">
-        <h2>Hellooooo Igor!</h2>
         <div class="error-body">
-            <h1>Darn, we're still building this feature, so you found an error!</h1>
+            <h2>Darn, we're still building this feature, so you found a temporary error!</h2>
             <h1> <span class="ascii">(╯°□°）╯︵ ┻━┻   (⊙_⊙;)</span></h1>
+            <p>
             <a href="http://localhost:8080/MealnannyAdmin">Let's pretend this never happened and go home</a>
+            </p>
         </div>
     </div>
 

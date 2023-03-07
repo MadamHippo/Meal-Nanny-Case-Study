@@ -10,8 +10,7 @@
         <h2>Manage Products | [[${pageTitle}]]</h2>
     </div>
 
-    <form th:action="@{/stocklist/save}" method="post"
-          th:object="${product}">
+    <form th:action="@{/stocklist/save}" method="post" th:object="${product}" enctype="multipart/form-data">
         <input type="hidden" th:field="*{id}" />
 
         <div>
@@ -23,29 +22,31 @@
                     <a class="nav-link" data-toggle="tab" href="#images" role="tab">Images</a>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#description" role="tab">Description</a>
-                </li>
-
                 <!--
-                <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#inStock" role="tab">In Stock Qty</a>
-                </li>
+                 <li class="nav-item">
+                     <a class="nav-link" data-toggle="tab" href="#description" role="tab">Description</a>
+                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#cost" role="tab">Cost</a>
-                </li>
-                -->
+                 <li class="nav-item">
+                     <a class="nav-link" data-toggle="tab" href="#inStock" role="tab">In Stock Qty</a>
+                 </li>
+
+                 <li class="nav-item">
+                     <a class="nav-link" data-toggle="tab" href="#cost" role="tab">Cost</a>
+                 </li>
+                 -->
             </ul>
 
             <div class="tab-content">
                 <div class="tab-pane active p-3" id="overview" role="tabpanel">
                     <div th:replace="product_overview :: content"></div>
                 </div>
-                <div class="tab-pane" id="images" role="tabpanel">Images</div>
+                <div class="tab-pane" id="images" role="tabpanel">
+                    <div th:replace="product_images :: content"></div>
+                </div>
                 <div class="tab-pane" id="description" role="tabpanel">Description</div>
                 <div class="tab-pane" id="inStock" role="tabpanel">In Stock Qty</div>
-                <div class="tab-pane" id="cost" role="tabpanel">Cost</div>
+                <div class="tab-pane" id="cost" role="tabpanel">Cost ($ USD)</div>
             </div>
         </div>
         <div class="text-center">
@@ -55,5 +56,6 @@
     </form>
 
 </div>
+<script th:src="@{/js/common_form.js}"></script>
 </body>
 </html>

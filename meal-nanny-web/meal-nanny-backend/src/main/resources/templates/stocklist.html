@@ -22,8 +22,8 @@
             <tr>
                 <th>Main Image</th>
                 <th>Product Name</th>
-                <th>In-Stock</th>
-                <th>Cost</th>
+                <th>Stock (Qty)</th>
+                <th>Cost ($ USD)</th>
                 <th>Details</th>
                 <th>Delete</th>
             </tr>
@@ -31,14 +31,16 @@
             <tbody>
             <tr th:each="product : ${listProducts}">
                 <td>
-                    Image
+                    <img th:src="@{${product.mainImagePath}}" style="width: 120px" class="img-fluid" />
                 </td>
                 <td>[[${product.name}]]</td>
                 <td>[[${product.inStock}]]</td>
                 <td>[[${product.cost}]]</td>
                 <td>
                     [[${product.description}]]
-                    <!--
+
+
+                    <!-- Unnecessary Feature
                     <a th:href="@{'/stocklist/detail/' + ${product.id}}"
                        title="View details of this product"
                     ></a>
@@ -49,9 +51,6 @@
                      -->
                 </td>
                 <td>
-                    <!-- <a th:href="@{'/stocklist/edit/' + ${product.id}}" title = "Edit Product">Edit</a>
-                    &nbsp-->
-                    &nbsp;
                     <a th:href="@{'/stocklist/delete/' + ${product.id}}" title = "Delete Product">Delete</a>
                 </td>
             </tr>
