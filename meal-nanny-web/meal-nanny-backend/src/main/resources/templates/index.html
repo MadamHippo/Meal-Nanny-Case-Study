@@ -15,7 +15,7 @@
 
     <br>
     <h3>
-    <div>
+    <div sec:authorize="isAuthenticated()">
         Welcome Back <a style="color:black;"
             sec:authentication="principal.fullname"></a>
 

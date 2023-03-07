@@ -27,12 +27,14 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link" th:href="@{/feedback}" style="color:black;">Feedback</a>
                 </li>
-                <li>
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" style="color:black;" sec:authentication="principal.fullname"></a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" id="logoutLink" href="">Logout</a>
-                    </div>
-                </li>
+                <div sec:authorize="isAuthenticated()">
+                    <li>
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" style="color:black;" sec:authentication="principal.fullname"></a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" id="logoutLink" href="">Logout</a>
+                        </div>
+                    </li>
+                </div>
             </ul>
         </div>
     </nav>
