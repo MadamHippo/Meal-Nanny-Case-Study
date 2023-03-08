@@ -1,4 +1,4 @@
-package org.lilyhe.common.entity;
+package org.lilyhe.admin.model;
 
 
 import jakarta.persistence.*;

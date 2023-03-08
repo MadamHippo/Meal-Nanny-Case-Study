@@ -1,9 +1,9 @@
-package org.lilyhe.admin.user;
+package org.lilyhe.admin.repository;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import org.lilyhe.common.entity.Role;
+import org.lilyhe.admin.model.Role;
 
 /**
  * @author Lily H.

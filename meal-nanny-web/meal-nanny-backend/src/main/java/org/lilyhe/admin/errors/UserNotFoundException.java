@@ -1,4 +1,4 @@
-package org.lilyhe.admin.user;
+package org.lilyhe.admin.errors;
 
 // write custom exception classes to handle specific exceptions to display user-friendly messages
 // good to separate it out

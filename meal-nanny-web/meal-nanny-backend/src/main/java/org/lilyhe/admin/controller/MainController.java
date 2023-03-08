@@ -1,4 +1,4 @@
-package org.lilyhe.admin;
+package org.lilyhe.admin.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

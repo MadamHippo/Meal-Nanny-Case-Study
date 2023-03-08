@@ -1,10 +1,12 @@
-package org.lilyhe.admin.user;
+package org.lilyhe.admin.service;
 
-import org.lilyhe.common.entity.Role;
-import org.lilyhe.common.entity.User;
+import org.lilyhe.admin.errors.UserNotFoundException;
+import org.lilyhe.admin.model.Role;
+import org.lilyhe.admin.model.User;
+import org.lilyhe.admin.repository.RoleRepo;
+import org.lilyhe.admin.repository.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 // import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 

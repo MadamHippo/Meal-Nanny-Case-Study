@@ -1,7 +1,9 @@
-package org.lilyhe.admin.user;
+package org.lilyhe.admin.controller;
 
-import org.lilyhe.common.entity.Role;
-import org.lilyhe.common.entity.User;
+import org.lilyhe.admin.model.Role;
+import org.lilyhe.admin.model.User;
+import org.lilyhe.admin.errors.UserNotFoundException;
+import org.lilyhe.admin.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

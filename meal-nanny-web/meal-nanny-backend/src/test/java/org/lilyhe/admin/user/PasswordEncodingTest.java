@@ -9,7 +9,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 /**
  * @author Lily H.
  *
- * encoding test
+ * encoding password test
  */
 
 public class PasswordEncodingTest {

@@ -1,6 +1,8 @@
-package org.lilyhe.admin.product;
+package org.lilyhe.admin.service;
 
-import org.lilyhe.common.entity.Product;
+import org.lilyhe.admin.errors.ProductNotFoundException;
+import org.lilyhe.admin.model.Product;
+import org.lilyhe.admin.repository.ProductRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

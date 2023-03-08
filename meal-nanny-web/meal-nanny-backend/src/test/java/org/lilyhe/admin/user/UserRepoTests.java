@@ -1,8 +1,9 @@
 package org.lilyhe.admin.user;
 
 import org.junit.jupiter.api.Test;
-import org.lilyhe.common.entity.Role;
-import org.lilyhe.common.entity.User;
+import org.lilyhe.admin.model.Role;
+import org.lilyhe.admin.model.User;
+import org.lilyhe.admin.repository.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase.Replace;

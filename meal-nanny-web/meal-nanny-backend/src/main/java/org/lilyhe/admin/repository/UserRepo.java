@@ -1,6 +1,6 @@
-package org.lilyhe.admin.user;
+package org.lilyhe.admin.repository;
 
-import org.lilyhe.common.entity.User;
+import org.lilyhe.admin.model.User;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
