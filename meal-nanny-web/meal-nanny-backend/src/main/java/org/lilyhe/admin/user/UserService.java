@@ -53,9 +53,10 @@ public class UserService {
     }
 
 
+    // Logger example --
     @Transactional
     public void save(User user) {
-        // info used to log messages. (other options include debug, warn, error etc.)
+        // Info used to log messages. (other options include debug, warn, error etc.)
         logger.info("Saving user: ", user);
         boolean isUpdatingUser = (user.getId() != null);
         if (isUpdatingUser) {

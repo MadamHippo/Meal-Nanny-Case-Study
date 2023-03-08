@@ -16,10 +16,13 @@ import org.springframework.data.repository.query.Param;
 // UserService class to access data using JPA
 public interface UserRepo extends CrudRepository<User, Integer> {
 
-    // custom query to search for user in db with specific email
+    // Query #1 ....custom query to search for user in db with specific email
     @Query("SELECT u FROM User u WHERE u.email = :email")
     // method for getting user email in db
     User getUserByEmail(@Param("email") String email);
+
+    // Note: custom Query #2 and #3 in ProductRepo
+
 
     // method that returns count of id records in db
     Long countById(Integer id);
