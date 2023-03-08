@@ -9,7 +9,9 @@
     <div>
         <h2>Manage Products | [[${pageTitle}]]</h2>
     </div>
-
+    <!-- NOTE: When you make a POST request, you have to encode the data that forms the body of the request in some way
+     and
+     multipart/form data is when you are writing client side code that includes input type=file elements -->
     <form th:action="@{/stocklist/save}" method="post" th:object="${product}" enctype="multipart/form-data">
         <input type="hidden" th:field="*{id}" />
 

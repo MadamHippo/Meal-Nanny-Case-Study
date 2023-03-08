@@ -28,16 +28,23 @@
 
             <div class = "border border-secondary rounded p-3">
                 <p>
-                    Access to Meal Nanny Control Panel
+                    Access to Meal Nanny requires membership first.
+                    <br>
+                    Login or create an account:
                 </p>
                 <p>
-                    <input type="email" name="email" class="form-control" placeholder="E-mail" required>
+                    <input type="email" name="email" class="form-control" placeholder="Igor@gmail.com"
+                           required>
                 </p>
                 <p>
-                    <input type="password" name="password" class="form-control" placeholder="Password" required>
+                    <input type="password" name="password" class="form-control" placeholder="12345678"
+                           required>
                 </p>
                 <p>
                     <input type="submit" value="Login" class="btn btn-primary" />
+                </p>
+                <p>
+                    <a th:href="@{/register}">New User? CREATE an ACCOUNT!</a>
                 </p>
             </div>
         </form>

@@ -51,6 +51,7 @@ public class ProductController {
     }
 
 
+    // saving functionality to add entries to db and web
     @PostMapping("/stocklist/save")
     public String saveProduct(Product product, RedirectAttributes ra,
                               @RequestParam("fileImage") MultipartFile multipartFile) throws IOException {
@@ -79,7 +80,7 @@ public class ProductController {
     }
 
 
-    // delete functionality
+    // delete functionality for stocklist listings
     @GetMapping("/stocklist/delete/{id}")
     public String deleteProduct(@PathVariable(name="id") Integer id, Model model,
                                 RedirectAttributes redirectAttributes) {

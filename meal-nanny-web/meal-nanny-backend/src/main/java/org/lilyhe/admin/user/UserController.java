@@ -60,6 +60,24 @@ public class UserController {
         return "account-reg";
     }
 
+    // register New user account
+    @GetMapping("/register")
+    public String register(Model model){
+
+        // Maybe I will consider disabled roles for user because this user is New.
+        List<Role> listRoles = service.listRoles();
+
+        User user = new User();
+        // set active ticked by default
+        user.setActive(true);
+
+        model.addAttribute("user", user);
+        model.addAttribute("listRoles", listRoles);
+        model.addAttribute("pageTitle", "Create New Account");
+
+        return "account-reg";
+    }
+
     // form submission for NEW users
     @PostMapping("/accounts/save")
     // takes 2 params - user and RA object that's for flash messages

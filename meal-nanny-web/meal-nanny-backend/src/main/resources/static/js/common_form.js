@@ -1,4 +1,4 @@
-// External js file for file upload validation and to display logo as thumbnail
+// js file for upload validation and to display logo as thumbnail. Images are really tricky so its separated out
 
 $(document).ready(function() {
 	$("#buttonCancel").on("click", function() {
