@@ -66,7 +66,7 @@ The project should now be running on http://localhost:8080/MealnannyAdmin/
 
 ## Usage
 
-Once the project is running, you can access the home page by visiting http://localhost:8080/
+Once the project is running, you can access the home page by visiting http://localhost:8080/MealnannyAdmin/
 
 From there, you can login, browse accounts, view the stocklist details, and submit feedback
 
