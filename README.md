@@ -62,7 +62,7 @@ Run the project using
 ```
 mvn spring-boot:run
 ```
-The project should now be running on localhost:8080.
+The project should now be running on http://localhost:8080/MealnannyAdmin/
 
 ## Usage
 
@@ -71,7 +71,7 @@ Once the project is running, you can access the home page by visiting http://loc
 From there, you can login, browse accounts, view the stocklist details, and submit feedback
 
 ```
-http://localhost:8080/
+http://localhost:8080/MealnannyAdmin/
 ```
 
 ## Contributing
