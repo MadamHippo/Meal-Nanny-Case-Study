@@ -28,7 +28,7 @@ public class Role {
     }
 
 
-    // to allow for multiple roles, 1 for shop admin 2 for shop assistant
+    // to allow for multiple roles, 1 for shop contributor 2 for participant
     public Role(Integer id){
         this.id = id;
     }
