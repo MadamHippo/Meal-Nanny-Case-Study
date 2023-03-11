@@ -38,12 +38,7 @@ public class ProductRepoTests {
         Product product = new Product();
         product.setName("TheOriginal");
         product.setAlias("original_pantry");
-        product.setDescription("The classic little pantry made from high quality materials and left plain so that " +
-                "it's completely " +
-                "open to your imagination when it comes to design" +
-                ". Full of potential to do your local community good just like all our other pantries, plus it " +
-                "will provide " +
-                "your family hours of fun deciding how to make this pantry yours!");
+        product.setAddress("Seattle, WA 98102");
         product.setCost(99);
         Product savedProduct = repo.save(product);
 
@@ -80,14 +75,15 @@ public class ProductRepoTests {
     // Test successful - updating product in db
     @Test
     public void testUpdateProduct() {
+        String address = "12345 fake st";
         Integer id = 1;
         Product product = repo.findById(id).get();
-        product.setCost(129);
+        product.setAddress(address);
         repo.save(product);
 
         Product updatedPriceProduct = entityManager.find(Product.class, id);
 
-        assertThat(updatedPriceProduct.getCost()).isEqualTo(129);
+        assertThat(updatedPriceProduct.getAddress()).isEqualTo(address);
     }
 
 

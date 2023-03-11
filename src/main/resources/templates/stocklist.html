@@ -23,8 +23,8 @@
                 <th>Main Image</th>
                 <th>Product Name</th>
                 <th>Stock (Qty)</th>
-                <th>Cost ($ USD)</th>
-                <th>Details</th>
+                <th>Location</th>
+                <th>Last Updated</th>
                 <th>Delete</th>
             </tr>
             </thead>
@@ -35,9 +35,8 @@
                 </td>
                 <td>[[${product.name}]]</td>
                 <td>[[${product.inStock}]]</td>
-                <td>[[${product.cost}]]</td>
                 <td>
-                    [[${product.description}]]
+                    [[${product.address}]]
 
 
                     <!-- Unnecessary Feature
@@ -50,6 +49,7 @@
                             th:replace="fragments :: status(${product.inStock}, 'product', '/products/' + ${product.id})" />
                      -->
                 </td>
+                <td>[[${product.lastUpdated}]]</td>
                 <td>
                     <a th:href="@{'/stocklist/delete/' + ${product.id}}" title = "Delete Product">Delete</a>
                 </td>

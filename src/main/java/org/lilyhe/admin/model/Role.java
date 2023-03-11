@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 
 /**
  * @author Lily H.
+ *  What kind of little free program participant are you? For example, do you have a little free library? Pantry?
+ *  Public art gallery?
  */
 @Entity
 @Table(name = "roles")

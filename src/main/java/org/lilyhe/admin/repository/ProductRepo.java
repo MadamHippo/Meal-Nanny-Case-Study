@@ -27,8 +27,8 @@ public interface ProductRepo extends PagingAndSortingRepository<Product, Integer
     User getUserByAlias(@Param("alias") String alias);
 
     // Query #2
-    @Query("SELECT p.id FROM Product p WHERE p.cost > :cost")
-    List<Product> findByCostGreaterThan(float cost);
+    //@Query("SELECT p.id FROM Product p WHERE p.cost > :cost")
+    //List<Product> findByCostGreaterThan(float cost);
 
     // custom query #3 in UserRepo.
 

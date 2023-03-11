@@ -2,7 +2,10 @@ package org.lilyhe.admin.model;
 
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
+import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -24,11 +27,14 @@ public class Product {
     private String name;
     @Column(unique = true, length = 256, nullable = false)
     private String alias;
-    @Column(name = "description", length = 4000, nullable = false)
-    private String description;
-    @Column(name = "in_stock")
-    private int inStock;
-    private float cost;
+    @Column(name = "address", length = 4000, nullable = false)
+    private String address;
+    @Column(name = "in_stock", length = 4000)
+    private String inStock;
+
+    @UpdateTimestamp
+    @Column(name = "last_updated", nullable = false)
+    private LocalDateTime lastUpdated;
 
 
     // main image required
@@ -64,28 +70,28 @@ public class Product {
         this.alias = alias;
     }
 
-    public String getDescription() {
-        return description;
+    public String getAddress() {
+        return address;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
-    public int getInStock() {
+    public String getInStock() {
         return inStock;
     }
 
-    public void setInStock(int inStock) {
+    public void setInStock(String inStock) {
         this.inStock = inStock;
     }
 
-    public float getCost() {
-        return cost;
+    public LocalDateTime getLastUpdated() {
+        return lastUpdated;
     }
 
-    public void setCost(float cost) {
-        this.cost = cost;
+    public void setLastUpdated(LocalDateTime lastUpdated) {
+        this.lastUpdated = lastUpdated;
     }
 
 

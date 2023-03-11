@@ -42,7 +42,7 @@ public class ProductController {
     @GetMapping("/stocklist/new")
     public String newProduct(Model model){
         Product product = new Product();
-        product.setInStock(1);
+        product.setInStock("");
 
         model.addAttribute("product", product);
         model.addAttribute("pageTitle", "Create New Product");
@@ -72,7 +72,7 @@ public class ProductController {
 
         /*
         System.out.println("Product Name: " + product.getName());
-        System.out.println("Product Description: " + product.getDescription());
+        System.out.println("Product Address: " + product.getAddress());
         System.out.println("Product Cost: " + product.getCost());
          */
         return "redirect:/stocklist";

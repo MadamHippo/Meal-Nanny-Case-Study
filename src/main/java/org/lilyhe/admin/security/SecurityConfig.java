@@ -73,7 +73,9 @@ public class SecurityConfig {
                 // ** is everything under that path...
                 .authorizeHttpRequests()
                 //allow for main page to display but any other action will require member login
-                .requestMatchers("/", "/error", "/register", "/accounts/check_email", "/accounts/save").permitAll()
+                .requestMatchers(
+                        "/", "/error", "/register", "/accounts/check_email", "/accounts/save", "/stocklist")
+                .permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin().loginPage("/login").usernameParameter("email").permitAll()
@@ -89,7 +91,7 @@ public class SecurityConfig {
     public WebSecurityCustomizer webSecurityCustomizer() {
         return (web) -> web
                 .ignoring()
-                .requestMatchers("/images/**", "/js/**", "/webjars/**", "/*.css");
+                .requestMatchers("/images/**", "/js/**", "/webjars/**", "/*.css", "/product-images/**");
     }
 }
 

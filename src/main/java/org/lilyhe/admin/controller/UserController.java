@@ -66,16 +66,13 @@ public class UserController {
     @GetMapping("/register")
     public String register(Model model){
 
-        // Maybe I will consider disabled roles for user because this user is New.
-        // List<Role> listRoles = service.listRoles();
+        List<Role> listRoles = service.listRoles();
 
         User user = new User();
-        // set active ticked by default
         user.setActive(true);
 
         model.addAttribute("user", user);
-        // Don't need this for registering because new users won't know their roles
-        // model.addAttribute("listRoles", listRoles);
+        model.addAttribute("listRoles", listRoles);
         model.addAttribute("pageTitle", "Create New Account");
 
         return "account-reg";
