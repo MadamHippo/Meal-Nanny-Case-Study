@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:700');
+
+<style>
+.container {
+  background-color: #fff; /* sets background color of container to white */
+  padding: 20px; /* adds padding around container */
+}
+
+.section2 {
+  background-color: #f2f2f2; /* sets background color of section2 to light gray */
+  padding: 20px; /* adds padding around section2 */
+  margin-top: 20px; /* adds margin at the top of section2 */
+}
+
+.sec2map {
+  width: 100%; /* sets width of map to 100% */
+  height: 550px; /* sets height of map to 550px */
+}
+
+.sec2addr {
+  margin-bottom: 20px; /* adds margin at the bottom of sec2addr */
+}
+
+.sec2contactform {
+  margin-top: 20px; /* adds margin at the top of sec2contactform */
+}
+
+.sec2frmtitle {
+  margin-bottom: 20px; /* adds margin at the bottom of sec2frmtitle */
+}
+
+input[type="text"], input[type="email"], textarea {
+  width: 100%; /* sets width of form fields to 100% */
+  padding: 10px; /* adds padding around form fields */
+  margin-bottom: 10px; /* adds margin at the bottom of form fields */
+  border: 1px solid #ccc; /* adds a border around form fields */
+  border-radius: 5px; /* adds rounded corners to form fields */
+}
+
+input[type="submit"] {
+  background-color: #008CBA; /* sets background color of submit button */
+  color: #fff; /* sets text color of submit button to white */
+  border: none; /* removes border around submit button */
+  padding: 10px 20px; /* adds padding around submit button */
+  border-radius: 5px; /* adds rounded corners to submit button */
+  cursor: pointer; /* changes cursor to pointer when hovering over submit button */
+}
+
+input[type="submit"]:hover {
+  background-color: #005f7d; /* changes background color of submit button when hovered over */
+}
+</style>

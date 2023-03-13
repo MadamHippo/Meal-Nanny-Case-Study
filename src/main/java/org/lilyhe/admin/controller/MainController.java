@@ -2,6 +2,8 @@ package org.lilyhe.admin.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.ui.Model;
+
 
 
 /**
@@ -24,6 +26,13 @@ public class MainController {
     @GetMapping("/login")
     public String viewLogin(){
         return "login";
+    }
+
+    // handles request to community
+    @GetMapping("/community")
+    public String viewCommunity(Model model){
+        model.addAttribute("cssFile", "map.css");
+        return "community";
     }
 
 
