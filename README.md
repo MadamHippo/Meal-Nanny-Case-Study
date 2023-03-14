@@ -4,6 +4,8 @@ Meal Nanny is a community-focused initiative that offers membership to those int
 
 User story and non-profit business proposal (Google Slides): https://docs.google.com/presentation/d/1blk8f0K98wNoSzt6JJYYHBLUYar0-k25ms1zdsfitec/edit?usp=sharing
 
+Partial youtube run thru: https://youtu.be/hdYJGis0YZk
+
 
 # Dependencies
 The project is built using Java, Spring Boot v3.0+, Hibernate, Thymeleaf, Spring Data JPA, Spring Security, 
