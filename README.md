@@ -2,9 +2,10 @@
 
 Meal Nanny is a community-focused initiative that offers membership to those interested in creating and building little free pantries/libraries in their local area.
 
-User story and non-profit business proposal (Google Slides): https://docs.google.com/presentation/d/1blk8f0K98wNoSzt6JJYYHBLUYar0-k25ms1zdsfitec/edit?usp=sharing
+YouTube demo: https://youtu.be/wr6XY516rU8
 
-Partial youtube run thru: https://youtu.be/hdYJGis0YZk
+User story and app proposal (Google Slides): https://docs.google.
+com/presentation/d/1blk8f0K98wNoSzt6JJYYHBLUYar0-k25ms1zdsfitec/edit?usp=sharing
 
 
 # Dependencies
