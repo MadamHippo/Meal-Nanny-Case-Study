@@ -40,7 +40,6 @@ jQuery - a fast and concise JavaScript library used for simplifying HTML documen
 
 Maven - a build automation tool used for managing and building Java projects.
 
-This is the capstone project for Per Scholas, a non-profit organization that provides free technology training and career development services to people from underserved communities.
 
 
 ## Installation
@@ -91,11 +90,6 @@ This project is licensed under the MIT License - see the LICENSE.md file for det
 
 ## Acknowledgments
 
-I would also like to thank our instructors and mentors for their guidance and support throughout the project. I would 
-like to thank Per Scholas (Igor & Erica & all my wonderful classmates) for providing us with the 
-opportunity to 
-work on 
-this project and 
-apply our knowledge and skills in a real-world scenario. 
+Thank you Udemy.
 
 
