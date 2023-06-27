@@ -1,4 +1,4 @@
-# Meal Nanny: A Case Study in Full-Stack Web Development
+# Meal Nanny: Full-Stack Project for Client
 
 Meal Nanny is a community-focused initiative that offers membership to those interested in creating and building little free pantries/libraries in their local area.
 
