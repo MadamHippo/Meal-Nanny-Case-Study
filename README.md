@@ -10,7 +10,7 @@ com/presentation/d/1blk8f0K98wNoSzt6JJYYHBLUYar0-k25ms1zdsfitec/edit?usp=sharing
 
 # Dependencies
 The project is built using Java, Spring Boot v3.0+, Hibernate, Thymeleaf, Spring Data JPA, Spring Security, 
-Bootstrap, HTML, CSS, and JavaScript. Full list check pom.xml file. Here's brief summaries of each technology.
+Bootstrap, HTML, CSS, and JavaScript. Full list check pom.xml file. Here are summaries of each technology.
 
 Java - a high-level, object-oriented programming language.
 
